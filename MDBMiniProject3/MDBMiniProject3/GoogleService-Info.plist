@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>808354860113-auou3m4tjqu6ca6215bd8llmqc0vohq8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.808354860113-auou3m4tjqu6ca6215bd8llmqc0vohq8</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDGpGHMsryPBcoKKoHMzqzD9Ts6kmSv1mI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>808354860113</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.anikgupta.MDBMiniProject3</string>
+	<key>PROJECT_ID</key>
+	<string>mdb-mp3-socials-9270c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mdb-mp3-socials-9270c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:808354860113:ios:6b0ec5ba5a02ead10c3c70</string>
+	<key>DATABASE_URL</key>
+	<string>https://mdb-mp3-socials-9270c.firebaseio.com</string>
+</dict>
+</plist>

@@ -1,0 +1,6 @@
+framework module Pods_MDBMiniProject3_MDBMiniProject3UITests {
+  umbrella header "Pods-MDBMiniProject3-MDBMiniProject3UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
