@@ -3,15 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		11A2D2AB8F232D8851A06115 /* Pods_MDBMiniProject3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 333FD7D31FA0A0442151CF02 /* Pods_MDBMiniProject3.framework */; };
 		3F263CF8BF53CB60B43C7439 /* Pods_MDBMiniProject3_MDBMiniProject3UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424248F5F4BEB8BD91B9BC3B /* Pods_MDBMiniProject3_MDBMiniProject3UITests.framework */; };
+		971B226C2346A5D60036EC6B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971B226B2346A5D60036EC6B /* DetailViewController.swift */; };
+		9721CEA02342C69D0098F760 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9721CE9F2342C69D0098F760 /* FeedViewController.swift */; };
+		9721CEA22342CA920098F760 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9721CEA12342CA920098F760 /* FeedTableViewCell.swift */; };
+		9721CEA42342CF310098F760 /* FeedViewController - UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9721CEA32342CF310098F760 /* FeedViewController - UI.swift */; };
+		9721CEA62342CFB90098F760 /* FeedViewController - TableFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9721CEA52342CFB90098F760 /* FeedViewController - TableFunctions.swift */; };
+		9721CEA82342D6D30098F760 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9721CEA72342D6D20098F760 /* AddEventViewController.swift */; };
+		9721CEAD2342DA250098F760 /* SigninViewController - UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9721CEAC2342DA250098F760 /* SigninViewController - UI.swift */; };
+		9721CEAF2342DACF0098F760 /* SignupViewController - UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9721CEAE2342DACF0098F760 /* SignupViewController - UI.swift */; };
+		9721CEB12342E9A00098F760 /* AddEventViewController - UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9721CEB02342E9A00098F760 /* AddEventViewController - UI.swift */; };
+		9721CEB32342EF240098F760 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9721CEB22342EF240098F760 /* ImagePicker.swift */; };
+		97306E2B2346B721003130CF /* DetailViewController - UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97306E2A2346B721003130CF /* DetailViewController - UI.swift */; };
+		97306E2D2346F2C0003130CF /* TypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97306E2C2346F2C0003130CF /* TypeButton.swift */; };
+		97308CF4233DA199009EFE43 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97308CF3233DA199009EFE43 /* SignupViewController.swift */; };
+		976B2FF3234528A000CF4238 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B2FF2234528A000CF4238 /* Event.swift */; };
 		97EB24D2233C4EED001A5B37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EB24D1233C4EED001A5B37 /* AppDelegate.swift */; };
 		97EB24D4233C4EED001A5B37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EB24D3233C4EED001A5B37 /* SceneDelegate.swift */; };
-		97EB24D6233C4EED001A5B37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EB24D5233C4EED001A5B37 /* ViewController.swift */; };
+		97EB24D6233C4EED001A5B37 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EB24D5233C4EED001A5B37 /* SigninViewController.swift */; };
 		97EB24D9233C4EED001A5B37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97EB24D7233C4EED001A5B37 /* Main.storyboard */; };
 		97EB24DB233C4EEE001A5B37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97EB24DA233C4EEE001A5B37 /* Assets.xcassets */; };
 		97EB24DE233C4EEE001A5B37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97EB24DC233C4EEE001A5B37 /* LaunchScreen.storyboard */; };
@@ -48,10 +62,24 @@
 		66340AC3850AADB097464678 /* Pods-MDBMiniProject3-MDBMiniProject3UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDBMiniProject3-MDBMiniProject3UITests.release.xcconfig"; path = "Target Support Files/Pods-MDBMiniProject3-MDBMiniProject3UITests/Pods-MDBMiniProject3-MDBMiniProject3UITests.release.xcconfig"; sourceTree = "<group>"; };
 		76C112343F93384D391736B5 /* Pods-MDBMiniProject3Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDBMiniProject3Tests.release.xcconfig"; path = "Target Support Files/Pods-MDBMiniProject3Tests/Pods-MDBMiniProject3Tests.release.xcconfig"; sourceTree = "<group>"; };
 		8AECDEF5AE87713B2D177ABA /* Pods_MDBMiniProject3Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MDBMiniProject3Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		971B226B2346A5D60036EC6B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9721CE9F2342C69D0098F760 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		9721CEA12342CA920098F760 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		9721CEA32342CF310098F760 /* FeedViewController - UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewController - UI.swift"; sourceTree = "<group>"; };
+		9721CEA52342CFB90098F760 /* FeedViewController - TableFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewController - TableFunctions.swift"; sourceTree = "<group>"; };
+		9721CEA72342D6D20098F760 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		9721CEAC2342DA250098F760 /* SigninViewController - UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SigninViewController - UI.swift"; path = "MDBMiniProject3/View/SigninViewController - UI.swift"; sourceTree = SOURCE_ROOT; };
+		9721CEAE2342DACF0098F760 /* SignupViewController - UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignupViewController - UI.swift"; sourceTree = "<group>"; };
+		9721CEB02342E9A00098F760 /* AddEventViewController - UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddEventViewController - UI.swift"; sourceTree = "<group>"; };
+		9721CEB22342EF240098F760 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		97306E2A2346B721003130CF /* DetailViewController - UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DetailViewController - UI.swift"; path = "MDBMiniProject3/View/DetailViewController - UI.swift"; sourceTree = SOURCE_ROOT; };
+		97306E2C2346F2C0003130CF /* TypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeButton.swift; sourceTree = "<group>"; };
+		97308CF3233DA199009EFE43 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		976B2FF2234528A000CF4238 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		97EB24CE233C4EED001A5B37 /* MDBMiniProject3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDBMiniProject3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97EB24D1233C4EED001A5B37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97EB24D3233C4EED001A5B37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		97EB24D5233C4EED001A5B37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		97EB24D5233C4EED001A5B37 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		97EB24D8233C4EED001A5B37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		97EB24DA233C4EEE001A5B37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97EB24DD233C4EEE001A5B37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -105,6 +133,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9721CEA92342D8670098F760 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9721CE9F2342C69D0098F760 /* FeedViewController.swift */,
+				9721CEA52342CFB90098F760 /* FeedViewController - TableFunctions.swift */,
+				97EB24D5233C4EED001A5B37 /* SigninViewController.swift */,
+				97308CF3233DA199009EFE43 /* SignupViewController.swift */,
+				9721CEA72342D6D20098F760 /* AddEventViewController.swift */,
+				971B226B2346A5D60036EC6B /* DetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9721CEAA2342D8720098F760 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				97306E2A2346B721003130CF /* DetailViewController - UI.swift */,
+				9721CEAC2342DA250098F760 /* SigninViewController - UI.swift */,
+				9721CEA12342CA920098F760 /* FeedTableViewCell.swift */,
+				9721CEA32342CF310098F760 /* FeedViewController - UI.swift */,
+				9721CEAE2342DACF0098F760 /* SignupViewController - UI.swift */,
+				9721CEB02342E9A00098F760 /* AddEventViewController - UI.swift */,
+				97306E2C2346F2C0003130CF /* TypeButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9721CEAB2342D8830098F760 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9721CEB22342EF240098F760 /* ImagePicker.swift */,
+				976B2FF2234528A000CF4238 /* Event.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9721CEB62342FA410098F760 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		97EB24C5233C4EED001A5B37 = {
 			isa = PBXGroup;
 			children = (
@@ -130,9 +201,12 @@
 		97EB24D0233C4EED001A5B37 /* MDBMiniProject3 */ = {
 			isa = PBXGroup;
 			children = (
+				9721CEB62342FA410098F760 /* Resources */,
+				9721CEAB2342D8830098F760 /* Model */,
 				97EB24D1233C4EED001A5B37 /* AppDelegate.swift */,
 				97EB24D3233C4EED001A5B37 /* SceneDelegate.swift */,
-				97EB24D5233C4EED001A5B37 /* ViewController.swift */,
+				9721CEA92342D8670098F760 /* Controller */,
+				9721CEAA2342D8720098F760 /* View */,
 				97EB24D7233C4EED001A5B37 /* Main.storyboard */,
 				97EB24DA233C4EEE001A5B37 /* Assets.xcassets */,
 				97EB24DC233C4EEE001A5B37 /* LaunchScreen.storyboard */,
@@ -170,7 +244,6 @@
 				40D8F01911986F92C4ECD89C /* Pods-MDBMiniProject3Tests.debug.xcconfig */,
 				76C112343F93384D391736B5 /* Pods-MDBMiniProject3Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -416,9 +489,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97EB24D6233C4EED001A5B37 /* ViewController.swift in Sources */,
+				9721CEB32342EF240098F760 /* ImagePicker.swift in Sources */,
+				9721CEAD2342DA250098F760 /* SigninViewController - UI.swift in Sources */,
+				9721CEAF2342DACF0098F760 /* SignupViewController - UI.swift in Sources */,
+				97EB24D6233C4EED001A5B37 /* SigninViewController.swift in Sources */,
+				9721CEB12342E9A00098F760 /* AddEventViewController - UI.swift in Sources */,
+				9721CEA22342CA920098F760 /* FeedTableViewCell.swift in Sources */,
 				97EB24D2233C4EED001A5B37 /* AppDelegate.swift in Sources */,
+				97306E2B2346B721003130CF /* DetailViewController - UI.swift in Sources */,
+				9721CEA02342C69D0098F760 /* FeedViewController.swift in Sources */,
+				97308CF4233DA199009EFE43 /* SignupViewController.swift in Sources */,
+				9721CEA62342CFB90098F760 /* FeedViewController - TableFunctions.swift in Sources */,
+				9721CEA42342CF310098F760 /* FeedViewController - UI.swift in Sources */,
+				9721CEA82342D6D30098F760 /* AddEventViewController.swift in Sources */,
+				97306E2D2346F2C0003130CF /* TypeButton.swift in Sources */,
+				976B2FF3234528A000CF4238 /* Event.swift in Sources */,
 				97EB24D4233C4EED001A5B37 /* SceneDelegate.swift in Sources */,
+				971B226C2346A5D60036EC6B /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +682,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XGGT2MG2FH;
 				INFOPLIST_FILE = MDBMiniProject3/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -614,6 +702,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XGGT2MG2FH;
 				INFOPLIST_FILE = MDBMiniProject3/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

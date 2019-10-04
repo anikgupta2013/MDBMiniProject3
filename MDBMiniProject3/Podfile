@@ -7,6 +7,9 @@ target 'MDBMiniProject3' do
 
   # Pods for MDBMiniProject3
   pod 'Firebase/Core' 
+  pod 'Firebase/Auth' 
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage' 
   target 'MDBMiniProject3Tests' do
     inherit! :search_paths
     # Pods for testing
