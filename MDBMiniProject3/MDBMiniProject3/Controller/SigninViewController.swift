@@ -23,7 +23,6 @@ class SigninViewController: UIViewController {
             return
         }
         self.performSegue(withIdentifier: "toFeedViewIn", sender: self)
-        // Do any additional setup after loading the view.
     }
 
     
@@ -31,7 +30,6 @@ class SigninViewController: UIViewController {
     @IBAction func onSigninPressed(_ sender: Any) {
         var email = ""
         var password = ""
-        /* PART 1A START*/
         email = emailField.text!
         if email == "" {
             self.displayAlert(title: "Missing email", message: "Please include a valid email.")
@@ -42,21 +40,16 @@ class SigninViewController: UIViewController {
             self.displayAlert(title: "Missing password", message: "Please include your password.")
             return
         }
-        
-        /* PART 1A FINISH*/
         Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
-            guard let uid = user?.user.uid else {
-                return
-            }
             if let error = error {
                 print(error)
                 self.displayAlert(title: "There was an error", message: "Could not sign in")
                 return
             } else {
-                //self.ourUserID = user?.uid
-                /*let defaults = UserDefaults.standard
-                defaults.set(uid, forKey: "signedInUser")*/
                 self.performSegue(withIdentifier: "toFeedViewIn", sender: self)
+            }
+            guard let uid = user?.user.uid else {
+                return
             }
         })
     }

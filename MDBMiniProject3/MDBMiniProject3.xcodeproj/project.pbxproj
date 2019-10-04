@@ -136,8 +136,7 @@
 		9721CEA92342D8670098F760 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9721CE9F2342C69D0098F760 /* FeedViewController.swift */,
-				9721CEA52342CFB90098F760 /* FeedViewController - TableFunctions.swift */,
+				97789D9D23473A3C0031F42D /* FeedViewController */,
 				97EB24D5233C4EED001A5B37 /* SigninViewController.swift */,
 				97308CF3233DA199009EFE43 /* SignupViewController.swift */,
 				9721CEA72342D6D20098F760 /* AddEventViewController.swift */,
@@ -149,10 +148,9 @@
 		9721CEAA2342D8720098F760 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				97789D9E23473AA50031F42D /* FeedView */,
 				97306E2A2346B721003130CF /* DetailViewController - UI.swift */,
 				9721CEAC2342DA250098F760 /* SigninViewController - UI.swift */,
-				9721CEA12342CA920098F760 /* FeedTableViewCell.swift */,
-				9721CEA32342CF310098F760 /* FeedViewController - UI.swift */,
 				9721CEAE2342DACF0098F760 /* SignupViewController - UI.swift */,
 				9721CEB02342E9A00098F760 /* AddEventViewController - UI.swift */,
 				97306E2C2346F2C0003130CF /* TypeButton.swift */,
@@ -174,6 +172,24 @@
 			children = (
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		97789D9D23473A3C0031F42D /* FeedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9721CE9F2342C69D0098F760 /* FeedViewController.swift */,
+				9721CEA52342CFB90098F760 /* FeedViewController - TableFunctions.swift */,
+			);
+			path = FeedViewController;
+			sourceTree = "<group>";
+		};
+		97789D9E23473AA50031F42D /* FeedView */ = {
+			isa = PBXGroup;
+			children = (
+				9721CEA12342CA920098F760 /* FeedTableViewCell.swift */,
+				9721CEA32342CF310098F760 /* FeedViewController - UI.swift */,
+			);
+			path = FeedView;
 			sourceTree = "<group>";
 		};
 		97EB24C5233C4EED001A5B37 = {

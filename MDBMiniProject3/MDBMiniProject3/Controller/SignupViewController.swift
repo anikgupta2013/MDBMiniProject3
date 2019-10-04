@@ -17,10 +17,8 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print("hello")
         setUI()
         setNavigationBar()
-        // Do any additional setup after loading the view.
     }
     
     
@@ -30,7 +28,6 @@ class SignupViewController: UIViewController {
         var username = ""
         var email = ""
         var password = ""
-        /* PART 1B START*/
         name = nameField.text!
         if name == "" {
             self.displayAlert(title: "Missing name", message: "Please include your name.")
@@ -52,31 +49,22 @@ class SignupViewController: UIViewController {
             return
         }
         
-        /* PART 1B FINISH*/
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if let error = error {
-                //self.loginRegisterButton
-                //print(error)
                 self.displayAlert(title: "There was an error", message: error.localizedDescription)
                 return
             } else {
-                
                 guard let uid = user?.user.uid else {
                     return
                 }
                 let ref = Database.database().reference()
                 let userRef = ref.child("users").child(uid)
                 let values = ["name": name, "username": username, "email": email]
-                
                 userRef.updateChildValues(values, withCompletionBlock: { (error, ref) in
                     if error != nil {
-                        //print(error)
                         self.displayAlert(title: "There was an error", message: "Couldn't create your profile")
                         return
                     } else {
-                        /*let defaults = UserDefaults.standard
-                        defaults.set(uid, forKey: "signedInUser")*/
-                        //self.ourUserID = user?.uid
                         self.performSegue(withIdentifier: "toFeedView", sender: self)
                     }
                 })

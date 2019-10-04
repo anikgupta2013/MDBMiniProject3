@@ -14,7 +14,6 @@ extension AddEventViewController{
         descriptionField.layer.borderColor = UIColor.systemBlue.cgColor
         descriptionField.layer.borderWidth = 1
         createButton.layer.cornerRadius = 7
-        
     }
     
 

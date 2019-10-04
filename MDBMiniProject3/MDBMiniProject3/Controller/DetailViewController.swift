@@ -25,7 +25,6 @@ class DetailViewController: UIViewController {
         setUI()
         updateEvent()
         setData()
-        // Do any additional setup after loading the view.
     }
     
     func setData(){
@@ -41,84 +40,44 @@ class DetailViewController: UIViewController {
         
         let dateFormatterPrint = DateFormatter()
         dateFormatterPrint.dateFormat = "EEE, MMM d, yyyy h:mm a"
-
-        /*if let date = dateFormatterGet.date(from: "2016-02-29 12:24:26") {
-            print(dateFormatterPrint.string(from: date))
-        } else {
-           print("There was an error decoding the string")
-        }*/
-        print(detailEvent.date)
         dateLabel.text = dateFormatterPrint.string(from: detailEvent.date)
     }
     
     func updateEvent(){
-        /*guard let uid = Auth.auth().currentUser?.uid else {
-           return
-        }*/
         let ref = Database.database().reference()
-        let eventRef = ref.child("events")//.child(detailEvent.id)
+        let eventRef = ref.child("events")
         eventRef.observe(DataEventType.value, with: { (snapshot) in
             let eventDict = snapshot.value as? [String : AnyObject] ?? [:]
-            //print("Event dict: \(eventDict[self.detailEvent.id])")
             let event = eventDict[self.detailEvent.id]!
             ref.child("users").child(event["creator"]! as! String).observeSingleEvent(of: .value) { (snapshot) in
-                    let user = snapshot.value as? [String : AnyObject] ?? [:]
-                    //print(user)
-                    let creator = user["name"]
-                    //print(creator!)
-                    //let creator = eventDict[id]!["creator"]!!
-                    //let date = Date(milliseconds: eventDict[id]!["date"]!!)
-                    //let date = Date(timeIntervalSince1970: TimeInterval((int)eventDict[id]!["date"]!!))
-                print(event["date"]!)
-                    let date = Date(timeIntervalSince1970: TimeInterval((event["date"]! as! Double)))// * 1000))
-                    //let timeinterval = TimeInterval((eventDict[id]!["date"]!! as! Double ) * 1000)
-                    
-                    let description = event["description"]!
-                    let title = event["title"]!
-                    var interest = event["interested"]
-                    var interested = [] as [String]
+                let user = snapshot.value as? [String : AnyObject] ?? [:]
+                let creator = user["name"]
+                let date = Date(timeIntervalSince1970: TimeInterval((event["date"]! as! Double)))
+                let description = event["description"]!
+                let title = event["title"]!
+                var interest = event["interested"]
+                var interested = [] as [String]
                 if let a = interest! {
                     interested = a as! [String]
-                        /*print("isnil")
-                        interested = [""] as! [String]*/
-                    }
-                    /*else {
-                        let interested = [] as! [String]
-                    }*/
-                    
-                    let storage = Storage.storage().reference()
+                }
+                let storage = Storage.storage().reference()
                 storage.child("images").child(self.detailEvent.id).getData(maxSize: 1 * 1024 * 1024){ (data, error) in
-                        //print(data)
-                        if data == nil {
-                            return
-                        }
-                        guard let image = UIImage(data: data!) else {
-                            //print("fail")
-                            return
-                        }
-                        //print("success")
-                        
-                    self.detailEvent = Event(title: title as! String, description: description as! String, image: image, date: date, creator: creator as! String, interested: interested as! [String], id: self.detailEvent.id)
-                        //print(self.events)
-                        /*self.events.sort { (a, b) -> Bool in
-                            a.date > b.date
-                        }
-                        self.tableView.reloadData()*/
-                        self.setData()
-                        
+                    if data == nil {
+                        return
                     }
+                    guard let image = UIImage(data: data!) else {
+                        return
+                    }
+                    self.detailEvent = Event(title: title as! String, description: description as! String, image: image, date: date, creator: creator as! String, interested: interested as! [String], id: self.detailEvent.id)
+                    self.setData()
                     
                 }
+                    
+            }
                 
         })
-            
-        //})
-       /*if detailEvent.interested.contains(uid) {
-           //interestedStar.im
-       }*/
     }
     @objc func handleStarToggle(sender: UIButton) {
-        print("toggle")
         guard let uid = Auth.auth().currentUser?.uid else {
            return
         }
@@ -127,20 +86,12 @@ class DetailViewController: UIViewController {
         interestedRef.observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
             var eventDict = snapshot.value as? [String] ?? []
             if eventDict.contains(uid){
-                //while eventDict.contains(uid){
-                print("removing")
-                    eventDict.remove(at: eventDict.firstIndex(of: uid) ?? 0)
-                //}
-                // remove from database
+                eventDict.remove(at: eventDict.firstIndex(of: uid) ?? 0)
             }
             else {
-                print("adding")
                 eventDict.append(uid)
-                //add to database
             }
-            
             interestedRef.setValue(eventDict)
-            
         })
     }
     

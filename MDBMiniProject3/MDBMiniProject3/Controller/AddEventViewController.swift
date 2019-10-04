@@ -22,8 +22,6 @@ class AddEventViewController: UIViewController {
         super.viewDidLoad()
         initUI()
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func selectImagePressed(_ sender: Any) {
@@ -32,8 +30,6 @@ class AddEventViewController: UIViewController {
     
     @IBAction func createEventPressed(_ sender: Any) {
         var description = descriptionField.text
-        /* PART 1B START*/
-        //var date = (Int) (dateSelector.date.timeIntervalSince1970)
         var date = dateSelector.date.timeIntervalSince1970.magnitude
         var title = nameField.text
         if title == "" {
@@ -49,12 +45,11 @@ class AddEventViewController: UIViewController {
             return
         }
 
-        //TODO - enter data into database
+        // Entering to database
         guard let uid = Auth.auth().currentUser?.uid else {
             self.displayAlert(title: "There was an error", message: "Couldn't create your event")
             return
-        }//UserDefaults.standard.string(forKey: "signedInUser")
-        //print(uid)
+        }
         let ref = Database.database().reference()
         let userRef = ref.child("users").child(uid)
         let eventRef = ref.child("events").childByAutoId()
@@ -63,71 +58,30 @@ class AddEventViewController: UIViewController {
                     "description": description,
                     "date": date,
                     "title": title,
-                    /*"image": image,*/
                     "interested": []] as [String : Any]
-        //let userEventsRef = userRef.child("created_events")
-        let a = userRef.child("created_events")//.child(key!)
+        let createdEvents = userRef.child("created_events")
         let childUpdates = ["/events/\(key!)" : post]
-        
-        
-        a.observeSingleEvent(of: .value){ (snapshot) in
+        createdEvents.observeSingleEvent(of: .value){ (snapshot) in
             var events = snapshot.value as? [String]
-            
             let storage = Storage.storage().reference()
             storage.child("images").child(key!).putData(image, metadata: nil) { (metadata, error) in
                 if error != nil{
                     self.displayAlert(title: "There was an error", message: "Couldn't associate your image")
                 }
-                
                 if events == nil {
                     events = [key!]
                 }
                 else {
                     events?.append(key!)
                 }
-                a.setValue(events!)
+                createdEvents.setValue(events!)
                 ref.updateChildValues(childUpdates)
             }
             
             
             
         }
-       //a.updateChildValues(post)
-        
-        
-        
-        dismiss(animated: true)
-        //let values = ["name": name, "username": username, "email": email]
-        /*userRef.observeSingleEvent(of: .value) { (snapshot) in
-            let userInfo = snapshot.value as? [String: AnyObject]
-            var eventList : [String]!
-            if userInfo?.keys.contains("events") ?? false{
-                eventList = userInfo?["events"]
-                eventList.append(/*insert eventID*/)
-            }
-            else {
-                eventList = [/*insert eventID*/]
-            }
-            let values = ["events": eventList]
-            let userEventsRef = userRef.child("events")
-            let eventRef = userEventsRef.child(/*insert eventID*/)
-            userRef.updateChildValues(values, withCompletionBlock: { (error, ref) in
-                if error != nil {
-                    print(error)
-                    self.displayAlert(title: "There was an error", message: "Couldn't create your event")
-                    return
-                } else {
-                    dismiss(animated: true)
-                }
-            })
-            
-        }*/
-        
-        
-        
-        
-        
-        
+        dismiss(animated: true)   
     }
     /*
     // MARK: - Navigation
