@@ -8,5 +8,12 @@ Sign Up Screen
 ![](screenshots/eventListScreen.png)
 Event Feed Screen
 
+![](screenshots/detailScreen.png)
+Event Details Screen
+
 ![](screenshots/createEventScreen.png)
-User creating new event Screen
+New Event Screen
+
+img[alt=""] {
+   width: 150px;
+}
